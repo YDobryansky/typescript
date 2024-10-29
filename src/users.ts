@@ -17,7 +17,7 @@ function fetchUserDetails(username: string): User | undefined {
 	const user = users.find(user => user.username === username)
 	if (!user) {
 		console.error(`User with username ${username} not found`)
-		return undefined
+		return
 	}
 	return user
 }
