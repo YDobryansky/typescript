@@ -103,11 +103,9 @@ function completeOrder(orderId: number): Order | undefined {
 }
 
 function getPizzaDetail(identifier: string | number): Pizza | undefined {
-	if (typeof identifier === 'string') {
-		return menu.find(
-			pizza => pizza.name.toLowerCase() === identifier.toLowerCase()
-		)
-	}
-
-	return menu.find(pizza => pizza.id === identifier)
+  return menu.find(pizza => 
+    typeof identifier === 'string' 
+      ? pizza.name.toLowerCase() === identifier.toLowerCase() 
+      : pizza.id === identifier
+  );
 }
